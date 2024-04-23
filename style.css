@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap");
+
+
+:root {
+	--fundo: #000000;		
+	--azul: #1000f3;
+	--branco: #FFFFFF;
+	--botao-on: #3A375E;
+	--botao-off: rgba(58, 55, 94, 0.5);
+	--texto-fundo: rgba(58, 55, 94, 0.3);	/*definindo variáveis*/
+	}
+
+body {
+	background-color: var(--fundo);  /*configurando o body */
+	color: var(--branco);
+	font-family: "Chakra Petch", sans-serif;
+
+	}	
+
+.conteudo-principal { 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.titulo-principal {   		/*alinhando texto a esquerda */
+	text-align: left;
+	width: 100%;
+	font-size: 32px;
+}
+
+.titulo-principal span {
+	color: var(--azul);  /* trocando cor do _ */
+}
+
+.botao {
+	font-family: "Chakra Petch", sans-serif; /* definindo a fonte usada no botao */
+	background-color: var(--botao-off); /* cor do botao "desligado" */
+	color: var(--branco); 
+	display: flex; /* cor da fonte */
+	justify-content: center;
+	padding: 1em;
+	font-size: 18px;
+	align-items: center;
+	width: 100%;
+
+	border-bottom: 4px solid var(--ativo); 
+	border-left: 2px solid var(--ativo); 
+	border-right: 2px solid var(--ativo);
+	border-top: none;
+}
+
+.botao.ativo {
+	background-color: var(--botao-on);	/* definindo cores do botão ativo*/
+	border-bottom: 4px solid var(--azul);
+	}
+
+.botoes {
+    display: block;
+}
+
+.abas-textos{
+	background-color: var(--texto-fundo);
+	padding: 40px;
+	border-radius: 0 0 40px 40px;
+}
+
+.aba-conteudo.ativo{
+	display: block;
+}
+
+.aba-conteudo{
+	display: none;
+}
+
+.aba-conteudo-titulo-princial{
+	font-size: 28px;
+	text-align: center;
+	justify-content: center;
+}
+
+.aba-conteudo-titulo-secundario{
+	text-align: center;
+	color: var(--azul);
+	text-transform: uppercase;
+}
+
+.contador{
+	font-size: 20px;
+	text-align: center;
+}
+
+@media screen and (min-width: 768px) /*estabelece um valor mínimo para a exibição */
+{.botoes { display: flex;
+	}
+.botao:first-child { border-radius: 40px 0 0 0;
+}
+.botao:last-child { border-radius: 0 40px 0 0; /*arredonda as bordas dos botoes*/
+}
+}
